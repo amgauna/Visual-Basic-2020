@@ -1,3 +1,5 @@
+' relogio.bas 
+
 Sub OnOffButton.Click (index as integer)
     If (index = 1 ) then
        AlarmOn = true

@@ -27,12 +27,12 @@ Sub OnOffItem_Click() ´Relogio despertador com menu
 End Sub    
 
 Sub OnItem_Click()
-If (AlarmOn) Then
-AlarmOn = False
-OnItem.Checked = False
-Else
-AlarmOn = True
-OnItem.Checked = True
-EndIf
+    If (AlarmOn) Then
+       AlarmOn = False
+       OnItem.Checked = False
+    Else
+       AlarmOn = True
+       OnItem.Checked = True
+    EndIf
 End Sub
 

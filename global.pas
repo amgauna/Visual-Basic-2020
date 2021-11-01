@@ -80,21 +80,21 @@ Sub BtnInicio_Click()
     DyClientes.MoveFirst
     NovoRegistro = False
     LeRegistro
- End Sub
+End Sub
  
- Sub BtnNovo_Click()
+Sub BtnNovo_Click()
      NovoRegistro = True
      LimparCampos
- End Sub
+End Sub
  
- Sub BtnPesquisa_Click()
+Sub BtnPesquisa_Click()
      Load FrmPesquisas
      FrmPesquisas.Show 1
      NovoRegistro = False
      LeRegistro
- End Sub
+End Sub
  
- Sub BtnProximo_click()
+Sub BtnProximo_click()
      DyClientes.MoveNext
      if DyClientes.EOF then
         MsgBox "Fim do Arquivo", 65, " Aviso "
@@ -102,7 +102,47 @@ Sub BtnInicio_Click()
      end if    
      NovoRegistro = False
      LeRegistro
- End Sub    
+End Sub    
 
-       
+Sub BtnRemFiltro_Click()
+    Set Dyclientes = DBados.CreateDynaset["Clientes"]
+    Dyclientes.MoveFirst
+    
+    LimpaCampos
+    InicializaCampos
+    NovoRegistro = False
+    LeRegistro
+End Sub
+
+Sub BtnUltimo_Click()
+    Dyclientes.MoveLast
+    NovoRegistro = False
+    LeRegistro
+End Sub
+
+Sub Form_Load()
+    Set BDados = OpenDatabase(c:\tecnico\bdados.mdb")
+    Set DyClientes = BDados.CreateDynaset("Clientes")
+    InicializaCampos
+    Dyclientes.MoveFirst
+    NovoRegistro = False
+    LeRegistro
+End Sub   
+
+Sub InicializaCampos()
+    Set CmpCodigo = Dyclientes["Codigo"]
+    Set CmpNome = DyClientes["Nome"]
+    Set CmpTel = DyClientes["Tel"]
+End Sub
+
+Sub LeRegistro()
+    txtNome.Text = cmpNome.Value
+    txtCodigo.Text = CmpCodigo.Value
+    txtText = CmpTel.Value
+End Sub    
+    
+    
+    
+    
+
 

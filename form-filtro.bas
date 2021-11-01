@@ -16,6 +16,26 @@ Sub BtnOk_Click()
   Set Dyclientes = BDados.Createdynaset(StrSQL)
     Unload FrmFiltro
 End Sub
+  
+Sub Form.Load()
+    Dim i as integer
+    
+    Rem Adiciona ao Combo Box de Campos o nome dos campos da tabela
+    
+    For i=0 to
+    BDados.TableDefs("Clientes").Fields.Count - 1
+    CmbCampo.AddItem
+    BDados.TableDefs("Clientes").Fields(i).Name
+  Next    
+    
+  CmbOperador.AddItem "="   
+  CmbOperador.AddItem ">"   
+  CmbOperador.AddItem ">="   
+  CmbOperador.AddItem "<"   
+  CmbOperador.AddItem "<="   
+  CmbOperador.AddItem "<>"   
+  CmbOperador.AddItem "LIKE"   
+Endsub  
 
 
   

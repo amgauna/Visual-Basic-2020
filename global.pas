@@ -76,7 +76,33 @@ Sub BtnGrava_click()
     NovoRegistro = False
 End Sub
 
-
+Sub BtnInicio_Click()
+    DyClientes.MoveFirst
+    NovoRegistro = False
+    LeRegistro
+ End Sub
+ 
+ Sub BtnNovo_Click()
+     NovoRegistro = True
+     LimparCampos
+ End Sub
+ 
+ Sub BtnPesquisa_Click()
+     Load FrmPesquisas
+     FrmPesquisas.Show 1
+     NovoRegistro = False
+     LeRegistro
+ End Sub
+ 
+ Sub BtnProximo_click()
+     DyClientes.MoveNext
+     if DyClientes.EOF then
+        MsgBox "Fim do Arquivo", 65, " Aviso "
+        DyClientes.MovePrevious       
+     end if    
+     NovoRegistro = False
+     LeRegistro
+ End Sub    
 
        
 

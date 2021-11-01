@@ -141,8 +141,9 @@ Sub LeRegistro()
     txtText = CmpTel.Value
 End Sub    
     
+Sub LimpaCampos()    
+    TxtNome.Text = ""
+    txtCodigo.Text = ""
+    txTel.Text = ""
+End Sub
     
-    
-    
-
-

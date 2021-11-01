@@ -101,7 +101,7 @@ Sub BtnProximo_click()
 End Sub    
 
 Sub BtnRemFiltro_Click()
-    Set Dyclientes = DBados.CreateDynaset["Clientes"]
+    Set Dyclientes = DBados.CreateDynaset("Clientes")
     Dyclientes.MoveFirst
     
     LimpaCampos
@@ -117,7 +117,7 @@ Sub BtnUltimo_Click()
 End Sub
 
 Sub Form_Load()
-    Set BDados = OpenDatabase(c:\tecnico\bdados.mdb")
+    Set BDados = OpenDatabase("c:\tecnico\bdados.mdb")
     Set DyClientes = BDados.CreateDynaset("Clientes")
     InicializaCampos
     Dyclientes.MoveFirst
@@ -126,9 +126,9 @@ Sub Form_Load()
 End Sub   
 
 Sub InicializaCampos()
-    Set CmpCodigo = Dyclientes["Codigo"]
-    Set CmpNome = DyClientes["Nome"]
-    Set CmpTel = DyClientes["Tel"]
+    Set CmpCodigo = Dyclientes("Codigo")
+    Set CmpNome = DyClientes("Nome")
+    Set CmpTel = DyClientes("Tel")
 End Sub
 
 Sub LeRegistro()

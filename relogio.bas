@@ -6,7 +6,7 @@ Sub OnOffButton.Click (index as integer)
     else
        AlarmOn = False
     End If
-EndSub
+End Sub
 
 Sub OnOffItem_Click()
     If (alarmOn) then
@@ -33,6 +33,6 @@ Sub OnItem_Click()
     Else
        AlarmOn = True
        OnItem.Checked = True
-    EndIf
+    End If
 End Sub
 
